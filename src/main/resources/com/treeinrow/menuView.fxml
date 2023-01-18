@@ -4,28 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.treeinrow.control.Menu">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.treeinrow.control.MenuController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="menuPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#startOnAction" prefHeight="35.0" prefWidth="200.0" text="Start">
+                  <JFXButton buttonType="FLAT" mnemonicParsing="false" onAction="#startOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Start">
                      <font>
                         <Font size="24.0" />
                      </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#settingsOnAction" prefHeight="35.0" prefWidth="200.0" text="Settings">
+                  </JFXButton>
+                  <JFXButton buttonType="FLAT" mnemonicParsing="false" onAction="#settingsOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Settings">
                      <font>
                         <Font size="24.0" />
                      </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#exitOnAction" prefHeight="35.0" prefWidth="200.0" text="Exit">
+                  </JFXButton>
+                  <JFXButton buttonType="FLAT" mnemonicParsing="false" onAction="#exitOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Exit">
                      <font>
                         <Font size="24.0" />
                      </font>
-                  </Button>
+                  </JFXButton>
                </children>
             </VBox>
          </children>

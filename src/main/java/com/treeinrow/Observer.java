@@ -1,2 +1,16 @@
-package com.treeinrow;public class Observer {
+package com.treeinrow;
+
+import java.util.ArrayList;
+
+public class Observer {
+    static ArrayList<Listener> listeners = new ArrayList<>();
+    Observer(){
+
+    }
+    public static void addListener(Listener listener){
+        listeners.add(listener);
+    }
+    public static void push(){
+        listeners.forEach(Listener::action);
+    }
 }

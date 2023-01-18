@@ -19,11 +19,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuControll implements Initializable {
+public class MenuController implements Initializable {
     @FXML public AnchorPane menuPane;
 
     public void startOnAction(ActionEvent actionEvent) {
-        Constants.ini(5, 8, 50, 600, 800);
         GameController gameController = new GameController();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("gameView.fxml"));
         fxmlLoader.setController(gameController);
@@ -31,7 +30,7 @@ public class MenuControll implements Initializable {
         try {
             root = fxmlLoader.load();
         } catch (IOException e) {
-            System.err.println("gameController load error");
+            System.err.println("game load error");
             throw new RuntimeException(e);
         }
         Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
@@ -43,7 +42,20 @@ public class MenuControll implements Initializable {
     }
 
     public void settingsOnAction(ActionEvent actionEvent) {
-
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("settingView.fxml"));
+        Parent root;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            System.err.println("setting load error");
+            throw new RuntimeException(e);
+        }
+        SettingController settingController = (SettingController)fxmlLoader.getController();
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Setting");
+        stage.setScene(new Scene(root));
+        stage.setWidth(600);
+        stage.setHeight(800);
     }
 
     public void exitOnAction(ActionEvent actionEvent) {
@@ -54,12 +66,14 @@ public class MenuControll implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BackgroundImage myBI;
         try {
-            myBI = new BackgroundImage(new Image(new File("/home/katsitovlis/Documents/Project/JavaMaven/TreeInRow/src/main/resources/com/treeinrow/images/background.png").toURI().toURL().toExternalForm(),600, 800,false,true),
+            myBI = new BackgroundImage(new Image(new File("src/main/resources/com/treeinrow/images/background.png").toURI().toURL().toExternalForm(),600, 800,false,true),
                     BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
         menuPane.setBackground(new Background(myBI));
+
+        Constants.ini(5, 8, 50);
     }
 }
